@@ -20,6 +20,14 @@
             <artifactId>javafx-fxml</artifactId>
             <version>13</version>
         </dependency>
+            
+        <!-- MariaDB JDBC Driver -->
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
