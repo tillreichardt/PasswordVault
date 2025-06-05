@@ -3,7 +3,7 @@ target/
 
 
 # ignore configuration files
-src/main/resources/config.properties
+config.properties
 
 # ignore Maven Wrapper files
 mvnw
