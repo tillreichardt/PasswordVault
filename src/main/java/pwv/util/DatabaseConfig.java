@@ -7,7 +7,7 @@ import java.util.Properties;
 public class DatabaseConfig {
     public static Properties loadProperties() {
         Properties props = new Properties();
-        String path = "resources/config.properties"; // Relativer Pfad
+        String path = "src/main/resources/pwv/config.properties"; // Relativer Pfad
         try (FileInputStream input = new FileInputStream(path)) {
             props.load(input);
         } catch (IOException ex) {
