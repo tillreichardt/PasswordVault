@@ -1,0 +1,13 @@
+# ignore compiled Java class files
+target/
+
+
+# ignore configuration files
+config.properties
+
+# ignore Maven Wrapper files
+mvnw
+mvnw.cmd
+
+# ignore IDE specific files
+.vscode/
