@@ -1,7 +1,8 @@
-package pwv;
+package pwv.gui.controller;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import pwv.gui.App;
 
 public class PrimaryController {
 
