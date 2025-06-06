@@ -21,7 +21,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("logout"));
+        scene = new Scene(loadFXML("login"));
         stage.setScene(scene);
         stage.show();
 
@@ -48,15 +48,14 @@ public class App extends Application {
     
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logout Confirmation");
-        alert.setHeaderText("Are you sure you want to log out?");
-        alert.setContentText("Do you want to save before logging out?");
+        alert.setHeaderText("Are you sure you want to exit?");
         
         Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
         Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
         alertStage.getIcons().add(icon);
 
         if(alert.showAndWait().get() == ButtonType.OK) {
-            System.out.println("Logging out...");
+            System.out.println("exiting...");
             stage.close();
         }
     }

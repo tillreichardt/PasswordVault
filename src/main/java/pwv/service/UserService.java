@@ -81,22 +81,4 @@ public class UserService {
         User user = userRepo.getUserByEmail(email);
         return user.getPassword().equals(passwordEncoder.hashPassword(password));
     }
-    /*
-    public static void main(String[] args) {
-        UserRepositoryImpl userRepo = new UserRepositoryImpl();
-        UserService userService = new UserService(userRepo);
-
-        // Example usage
-        try {
-            User user = userService.registerNewUser("Till", "till@reichardt.io", "legolego1");
-            if(userService.checkPassword(user.getEmail(), "legolego1")){
-                System.out.println("Password is correct");
-            } else {
-                System.out.println("Error: Password is incorrect");
-            }
-        } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
-    */  
 }
