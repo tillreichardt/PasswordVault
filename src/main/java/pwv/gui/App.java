@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +21,9 @@ public class App extends Application {
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("Password Vault");
+        Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
+        stage.getIcons().add(icon);
     }
 
     public static void setRoot(String fxml) throws IOException {

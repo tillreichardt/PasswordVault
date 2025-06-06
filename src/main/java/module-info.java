@@ -2,6 +2,7 @@ module pwv {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires javafx.graphics;
 
     // Öffnet das GUI-Paket und das Controller-Paket für JavaFX
     opens pwv.gui to javafx.fxml;
