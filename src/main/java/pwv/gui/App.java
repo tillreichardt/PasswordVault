@@ -51,6 +51,10 @@ public class App extends Application {
         alert.setHeaderText("Are you sure you want to log out?");
         alert.setContentText("Do you want to save before logging out?");
         
+        Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
+        Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
+        alertStage.getIcons().add(icon);
+
         if(alert.showAndWait().get() == ButtonType.OK) {
             System.out.println("Logging out...");
             stage.close();

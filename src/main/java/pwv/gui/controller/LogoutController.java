@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuBar;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class LogoutController {
@@ -22,7 +23,11 @@ public class LogoutController {
         alert.setTitle("Logout Confirmation");
         alert.setHeaderText("Are you sure you want to log out?");
         alert.setContentText("Do you want to save before logging out?");
-        
+
+        Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
+        Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
+        alertStage.getIcons().add(icon);
+
         if(alert.showAndWait().get() == ButtonType.OK) {
             stage = (Stage) scenePane.getScene().getWindow();
             System.out.println("Logging out...");
