@@ -45,7 +45,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pwv.gui.controller.LoginController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pwv.gui.controller.LoginController">
   <children>
     <MenuBar fx:id="scenePane" VBox.vgrow="NEVER">
       <menus>
@@ -91,11 +91,11 @@
             <Button fx:id="loginButton" layoutX="246.0" layoutY="223.0" mnemonicParsing="false" onAction="#login" text="Login" />
             <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="306.0" layoutY="188.0" text="" />
             <Button fx:id="newUserButton" layoutX="334.0" layoutY="223.0" mnemonicParsing="false" onAction="#createNewUser" text="new User" />
-            <PasswordField fx:id="passwordField" layoutX="246.0" layoutY="193.0" promptText="Password" />
+            <PasswordField fx:id="passwordField" layoutX="246.0" layoutY="188.0" promptText="Password" />
             <TextField fx:id="emailField" layoutX="246.0" layoutY="150.0" promptText="Email" />
-            <ImageView fx:id="banner" fitHeight="150.0" fitWidth="200.0" layoutX="220.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="bannerImage" fitHeight="252.0" fitWidth="411.0" layoutX="195.0" layoutY="-64.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="banner" />
+                  <Image url="@../banner.png" />
                </image>
             </ImageView>
       </children>

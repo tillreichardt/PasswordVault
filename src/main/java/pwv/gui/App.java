@@ -21,18 +21,25 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("login"));
-        stage.setScene(scene);
-        stage.show();
+        try {
+            scene = new Scene(loadFXML("login"));
+            stage.setScene(scene);
+            stage.show();
+            // scene.getStylesheets().add(getClass().getResource("/pwv/style/style.css").toExternalForm());
+            String css = this.getClass().getResource("/pwv/style/style.css").toExternalForm();
+            scene.getStylesheets().add(css);
+            stage.setOnCloseRequest(event -> {
+                event.consume();  
+                logout(stage);
+            });
 
-        stage.setOnCloseRequest(event -> {
-            event.consume();  
-            logout(stage);
-        });
-
-        stage.setTitle("Password Vault");
-        Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
-        stage.getIcons().add(icon);
+            stage.setTitle("Password Vault");
+            Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
+            stage.getIcons().add(icon);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
     }
 
     public static void setRoot(String fxml) throws IOException {
