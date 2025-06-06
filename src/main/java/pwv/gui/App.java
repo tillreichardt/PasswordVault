@@ -1,9 +1,12 @@
 package pwv.gui;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -18,9 +21,15 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("logout"));
         stage.setScene(scene);
         stage.show();
+
+        stage.setOnCloseRequest(event -> {
+            event.consume();  
+            logout(stage);
+        });
+
         stage.setTitle("Password Vault");
         Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
         stage.getIcons().add(icon);
@@ -35,6 +44,18 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
+    public void logout(Stage stage) {
+    
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout Confirmation");
+        alert.setHeaderText("Are you sure you want to log out?");
+        alert.setContentText("Do you want to save before logging out?");
+        
+        if(alert.showAndWait().get() == ButtonType.OK) {
+            System.out.println("Logging out...");
+            stage.close();
+        }
+    }
 
 
     public static void main(String[] args) {
