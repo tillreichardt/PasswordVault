@@ -17,7 +17,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/23"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="pwv.gui.controller.LoginController">
+            fx:controller="pwv.gui.controller.CreateUserController">
 
 
   <top>
@@ -88,12 +88,12 @@
           </ImageView>
         
         <TextField fx:id="emailField"
-                   promptText="Email"
+                   promptText="Enter your Email"
                    prefWidth="300.0"
                    maxWidth="300.0" />
 
-        <PasswordField fx:id="passwordField"
-                       promptText="Password"
+        <TextField fx:id="nameField"
+                       promptText="Enter your Name"
                        prefWidth="300.0"
                        maxWidth="300.0" />
 
@@ -108,17 +108,17 @@
         <HBox alignment="CENTER"
               spacing="5.0">
           <children>
-            <Button fx:id="loginButton"
-                    text="Sign In"
+            <Button fx:id="backButton"
+                    text="Go back"
                     mnemonicParsing="false"
-                    onAction="#login"
+                    onAction="#aleadyHaveAnAccount"
                     prefWidth="147.5"
                     maxWidth="147.5" />
 
-            <Button fx:id="newUserButton"
-                    text="new User"
+            <Button fx:id="nextButton"
+                    text="Next"
                     mnemonicParsing="false"
-                    onAction="#createNewUser"
+                    onAction="#nextButtonAction"
                     prefWidth="147.5"
                     maxWidth="147.5">
             </Button>

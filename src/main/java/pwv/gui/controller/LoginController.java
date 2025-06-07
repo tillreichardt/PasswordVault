@@ -1,21 +1,20 @@
 package pwv.gui.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
+import pwv.gui.App;
 import pwv.repository.impl.UserRepositoryImpl;
 import pwv.service.UserService;
 import javafx.scene.layout.Region;
@@ -31,7 +30,6 @@ public class LoginController implements Initializable{
     @FXML private ImageView bannerImage;
     @FXML private VBox centerVBox;
 
-    private Stage stage;
     private String email;
     private String password;
 
@@ -50,14 +48,12 @@ public class LoginController implements Initializable{
         );
         bannerImage.setImage(img);
         bannerImage.setPreserveRatio(true);
-
-        // Damit die VBox sich nicht selbst aufbläht:
         centerVBox.setMaxWidth(Region.USE_COMPUTED_SIZE);
         centerVBox.setPrefWidth(Region.USE_COMPUTED_SIZE);
         loginButton.setDefaultButton(true);
     }
 
-    public void login(ActionEvent event){
+    public void login(){
         
         email = emailField.getText();
         password = passwordField.getText();
@@ -68,22 +64,17 @@ public class LoginController implements Initializable{
             try{
                 if(userService.checkPassword(email, password)){
                     System.out.println("Logging in with email: " + email);
+                } else {
+                    errorLabel.setText("Invalid password.");
                 }
             } catch (IllegalArgumentException e) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
-                Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
-                alertStage.getIcons().add(icon);
-                alert.getDialogPane().getStylesheets().add(
-                    getClass().getResource("/pwv/style/alertStyle.css").toExternalForm()
-                );
-
-                alert.setTitle("An error has occurred.");
-                alert.setHeaderText("invalid login credentials.");
-                alert.showAndWait();
+                errorLabel.setText(e.getMessage());
             }
         }
     }
 
-    public void createNewUser(){}
+    @FXML
+    public void createNewUser() throws IOException {
+        App.setRoot("createUser");
+    }
 }
