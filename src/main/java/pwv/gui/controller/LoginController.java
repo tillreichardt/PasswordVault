@@ -58,7 +58,7 @@ public class LoginController implements Initializable{
         password = passwordField.getText();
 
         if(email.isEmpty() || password.isEmpty()) {
-            errorLabel.setText("Input is required.");
+            errorLabel.setText("Please fill in all fields!");
         } else {
             try{
                 if(userService.checkPassword(email, password)){

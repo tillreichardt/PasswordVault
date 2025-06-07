@@ -69,7 +69,7 @@ public class CreateUserController implements Initializable{
         email = emailField.getText();
         name = nameField.getText();
         if (email.isEmpty() || name.isEmpty()) {
-            errorLabel.setText("Please fill in all fields.");
+            errorLabel.setText("Please fill in all fields!");
             return;
         }
         if(userService.checkEmailExists(email)) {
