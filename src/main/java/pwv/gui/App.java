@@ -65,7 +65,7 @@ public class App extends Application {
         Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
         alertStage.getIcons().add(icon);
         alert.getDialogPane().getStylesheets().add(
-            getClass().getResource("/pwv/style/style.css").toExternalForm()
+            getClass().getResource("/pwv/style/alertStyle.css").toExternalForm()
         );
 
         if(alert.showAndWait().get() == ButtonType.OK) {

@@ -75,7 +75,7 @@ public class LoginController implements Initializable{
                 Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
                 alertStage.getIcons().add(icon);
                 alert.getDialogPane().getStylesheets().add(
-                    getClass().getResource("/pwv/style/style.css").toExternalForm()
+                    getClass().getResource("/pwv/style/alertStyle.css").toExternalForm()
                 );
 
                 alert.setTitle("An error has occurred.");
