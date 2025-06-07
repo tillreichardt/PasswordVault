@@ -28,11 +28,15 @@ public class App extends Application {
             // scene.getStylesheets().add(getClass().getResource("/pwv/style/style.css").toExternalForm());
             String css = this.getClass().getResource("/pwv/style/style.css").toExternalForm();
             scene.getStylesheets().add(css);
+
             stage.setOnCloseRequest(event -> {
                 event.consume();  
                 logout(stage);
             });
 
+            stage.setResizable(true);
+            stage.setMinWidth(1100);
+            stage.setMinHeight(700);
             stage.setTitle("Password Vault");
             Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
             stage.getIcons().add(icon);
@@ -60,6 +64,9 @@ public class App extends Application {
         Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
         Image icon = new Image(getClass().getResource("/pwv/icon.png").toExternalForm());
         alertStage.getIcons().add(icon);
+        alert.getDialogPane().getStylesheets().add(
+            getClass().getResource("/pwv/style/style.css").toExternalForm()
+        );
 
         if(alert.showAndWait().get() == ButtonType.OK) {
             System.out.println("exiting...");

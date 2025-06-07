@@ -1,0 +1,78 @@
+
+.root {
+    -fx-background-color: #121417;
+}
+
+#errorLabel{
+    -fx-text-fill: #e4605d;
+    -fx-padding: 0 0 0 5; 
+}
+
+.center-box {
+    -fx-padding: 20 0 20 0;   /* oben/rechts/unten/links */
+    -fx-spacing: 5;
+}
+
+
+.text-field, .password-field {
+    -fx-background-color: #252836;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #8a8c90;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #3a3c42;
+    -fx-border-width: 1px;
+    -fx-padding: 0.4em 0.8em;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #4A90FF;
+    -fx-border-width: 2px;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-border-color: #4A90FF;        
+    -fx-border-width: 2px;
+    -fx-text-fill: #4A90FF;          
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;     
+    -fx-border-radius: 20px;
+    -fx-padding: 0.5em 2em;          
+}
+
+.button:hover {
+    -fx-background-color: #4151b5;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-padding: 0.5em 2em;
+}
+
+.button:pressed {
+    -fx-background-color: #7c7ca7;
+}
+
+.button.outline {
+    -fx-background-color: transparent;
+    -fx-border-color: #5264e0;
+    -fx-border-width: 2px;
+    -fx-text-fill: #5264e0;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-padding: 0.5em 2em;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.button.outline:hover {
+    -fx-background-color: rgba(82,100,224,0.1);
+}
+
+.button.outline:pressed {
+    -fx-background-color: rgba(82,100,224,0.2);
+}
